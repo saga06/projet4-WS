@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://manager.contract.business.library.oc.library.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AuthorService" targetNamespace="http://manager.contract.business.library.oc.library.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://manager.contract.business.library.oc.library.com/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://manager.contract.business.library.oc.library.com/">
+  <xs:element name="getAuthor" type="tns:getAuthor"/>
+  <xs:element name="getAuthorResponse" type="tns:getAuthorResponse"/>
+  <xs:element name="getListAuthor" type="tns:getListAuthor"/>
+  <xs:element name="getListAuthorResponse" type="tns:getListAuthorResponse"/>
+  <xs:element name="getNbAuthor" type="tns:getNbAuthor"/>
+  <xs:element name="getNbAuthorResponse" type="tns:getNbAuthorResponse"/>
+  <xs:complexType name="getAuthor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAuthorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:author"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="author">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListAuthor">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getListAuthorResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:author"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getNbAuthor">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getNbAuthorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotFoundException" type="tns:NotFoundException"/>
+  <xs:complexType name="NotFoundException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getListAuthorResponse">
+    <wsdl:part element="tns:getListAuthorResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthor">
+    <wsdl:part element="tns:getAuthor" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getListAuthor">
+    <wsdl:part element="tns:getListAuthor" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNbAuthor">
+    <wsdl:part element="tns:getNbAuthor" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNbAuthorResponse">
+    <wsdl:part element="tns:getNbAuthorResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NotFoundException">
+    <wsdl:part element="tns:NotFoundException" name="NotFoundException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAuthorResponse">
+    <wsdl:part element="tns:getAuthorResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AuthorService">
+    <wsdl:operation name="getAuthor">
+      <wsdl:input message="tns:getAuthor" name="getAuthor">
+    </wsdl:input>
+      <wsdl:output message="tns:getAuthorResponse" name="getAuthorResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListAuthor">
+      <wsdl:input message="tns:getListAuthor" name="getListAuthor">
+    </wsdl:input>
+      <wsdl:output message="tns:getListAuthorResponse" name="getListAuthorResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNbAuthor">
+      <wsdl:input message="tns:getNbAuthor" name="getNbAuthor">
+    </wsdl:input>
+      <wsdl:output message="tns:getNbAuthorResponse" name="getNbAuthorResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthorServiceSoapBinding" type="tns:AuthorService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getAuthor">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAuthor">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAuthorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getListAuthor">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getListAuthor">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getListAuthorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNbAuthor">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getNbAuthor">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNbAuthorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthorService">
+    <wsdl:port binding="tns:AuthorServiceSoapBinding" name="AuthorServicePort">
+      <soap:address location="http://localhost:8080/services/AuthorService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
