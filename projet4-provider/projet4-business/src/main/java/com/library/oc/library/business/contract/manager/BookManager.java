@@ -23,7 +23,7 @@ public interface BookManager {
      * @return Le {@link Book}
      * @throws NotFoundException Si le book n'est pas trouvé
      */
-    Book getBook(@WebParam(name = "id") Integer pId) throws NotFoundException;
+    Book getBook(@WebParam(name = "id") Integer pId);
 
     /**
      * Renvoie la liste des {@link Book}

@@ -64,7 +64,7 @@ public class BookManagerImpl extends AbstractManager implements BookManager {
     public void extendBorrow(Integer id) {getDaoFactory().getBookBorrowedDao().extendBorrow(id);}
 
     @Override
-    public Book getBook(Integer pId) throws NotFoundException { return getDaoFactory().getBookDao().read(pId); }
+    public Book getBook(Integer pId) { return getDaoFactory().getBookDao().read(pId); }
 
 
     @Override
