@@ -3,7 +3,6 @@ package com.library.oc.library.business.contract.manager;
 import com.library.oc.library.model.bean.book.Book;
 import com.library.oc.library.model.bean.book.BookBorrowed;
 import com.library.oc.library.model.bean.user.User;
-import com.library.oc.library.model.exception.NotFoundException;
 
 import javax.jws.WebParam;
 import javax.jws.WebService;
@@ -21,7 +20,6 @@ public interface BookManager {
      *
      * @param pId l'identifiant du book
      * @return Le {@link Book}
-     * @throws NotFoundException Si le book n'est pas trouvé
      */
     Book getBook(@WebParam(name = "id") Integer pId);
 

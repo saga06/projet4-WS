@@ -1,5 +1,7 @@
 package com.library.oc.library.webapp.action;
 
+import com.library.oc.library.business.contract.manager.Book;
+
 import com.library.oc.library.business.contract.manager.Author;
 import com.library.oc.library.business.contract.manager.Book;
 import com.library.oc.library.business.contract.manager.Book_Service;

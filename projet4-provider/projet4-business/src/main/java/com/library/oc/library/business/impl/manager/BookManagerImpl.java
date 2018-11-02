@@ -9,7 +9,6 @@ import com.library.oc.library.business.contract.manager.BookManager;
 import com.library.oc.library.model.bean.book.BookBorrowed;
 import com.library.oc.library.model.bean.book.Book;
 import com.library.oc.library.model.bean.user.User;
-import com.library.oc.library.model.exception.NotFoundException;
 
 @Named
 public class BookManagerImpl extends AbstractManager implements BookManager {
