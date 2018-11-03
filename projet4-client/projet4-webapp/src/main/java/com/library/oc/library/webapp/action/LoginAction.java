@@ -1,10 +1,11 @@
 package com.library.oc.library.webapp.action;
 
 
-import com.library.oc.library.business.contract.manager.NotFoundException;
+
+
 import com.library.oc.library.business.contract.manager.User;
+import com.library.oc.library.business.contract.manager.UserClient;
 import com.library.oc.library.business.contract.manager.UserService;
-import com.library.oc.library.business.contract.manager.UserService_Service;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -31,8 +32,8 @@ public class LoginAction extends ActionSupport implements SessionAware, ServletR
     private Map<String,Object> session;
     private HttpServletRequest servletRequest;
 
-    private UserService_Service userService = new UserService_Service();
-    private UserService userClient = userService.getUserServicePort();
+    private UserService userService = new UserService();
+    private UserClient userClient = userService.getUserPort();
 
 
     // ==================== Getters/Setters ====================
@@ -62,6 +63,7 @@ public class LoginAction extends ActionSupport implements SessionAware, ServletR
         String vResult = ActionSupport.INPUT;
         if (!StringUtils.isAllEmpty(email,password)) {
             /*user = managerFactory.getUserManager().getEmailUser(this.email);*/
+            user = userClient.getEmailUser(this.email);
 
             if (user != null && userClient.validateLogin(user, this.password))
             {

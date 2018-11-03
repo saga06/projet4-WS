@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Manager du package « author »
  */
-@WebService(name="AuthorService", serviceName="AuthorService")
+@WebService(name="AuthorClient", serviceName="AuthorService",portName = "AuthorPort")
 public interface AuthorManager {
     /**
      * Renvoie l'auteur demandé

@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Manager du package « user »
  */
-@WebService(name="UserService", serviceName="UserService")
+@WebService(name="UserClient", serviceName="UserService",portName = "UserPort")
 public interface UserManager {
 
     /**

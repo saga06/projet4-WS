@@ -1,8 +1,10 @@
 package com.library.oc.library.webapp.action;
 
+
+
 import com.library.oc.library.business.contract.manager.Author;
+import com.library.oc.library.business.contract.manager.AuthorClient;
 import com.library.oc.library.business.contract.manager.AuthorService;
-import com.library.oc.library.business.contract.manager.AuthorService_Service;
 import com.library.oc.library.business.contract.manager.NotFoundException_Exception;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -20,8 +22,10 @@ public class GestionAuthorAction extends ActionSupport {
     private List<Author> listAuthor;
     private Author author;
 
-    private AuthorService_Service authorService = new AuthorService_Service();
-    private AuthorService authorClient = authorService.getAuthorServicePort();
+    private AuthorService authorService = new AuthorService();
+    private AuthorClient authorClient = authorService.getAuthorPort();
+
+
 
 
     // ==================== Getters/Setters ====================

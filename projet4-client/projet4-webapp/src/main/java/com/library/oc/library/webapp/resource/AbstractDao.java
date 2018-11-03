@@ -1,27 +1,27 @@
 package com.library.oc.library.webapp.resource;
 
 
+import com.library.oc.library.business.contract.manager.AuthorClient;
 import com.library.oc.library.business.contract.manager.AuthorService;
-import com.library.oc.library.business.contract.manager.AuthorService_Service;
 
 public class AbstractDao {
 
-    private AuthorService_Service authorService = new AuthorService_Service();
-    private AuthorService authorClient = authorService.getAuthorServicePort();
+    private AuthorService authorService = new AuthorService();
+    private AuthorClient authorClient = authorService.getAuthorPort();
 
-    public AuthorService_Service getAuthorService() {
+    public AuthorService getAuthorService() {
         return authorService;
     }
 
-    public void setAuthorService(AuthorService_Service authorService) {
+    public void setAuthorService(AuthorService authorService) {
         this.authorService = authorService;
     }
 
-    public AuthorService getAuthorClient() {
+    public AuthorClient getAuthorClient() {
         return authorClient;
     }
 
-    public void setAuthorClient(AuthorService authorClient) {
+    public void setAuthorClient(AuthorClient authorClient) {
         this.authorClient = authorClient;
     }
 }

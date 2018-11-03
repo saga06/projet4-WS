@@ -188,16 +188,17 @@
                         <id>generate-sources</id>
                         <phase>generate-sources</phase>
                         <configuration>
+                            <sourceRoot>${basedir}/src/main/java</sourceRoot>
                             <wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/wsdl/UserService.wsdl</wsdl>
+                                    <wsdl>http://localhost:8080/services/UserService?wsdl</wsdl>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/wsdl/BookService.wsdl</wsdl>
+                                    <wsdl>http://localhost:8080/services/BookService?wsdl</wsdl>
                                 </wsdlOption>
                                 <wsdlOption>
-                                    <wsdl>${basedir}/src/main/resources/wsdl/AuthorService.wsdl</wsdl>
+                                    <wsdl>http://localhost:8080/services/AuthorService?wsdl</wsdl>
                                 </wsdlOption>
                             </wsdlOptions>
                         </configuration>
@@ -209,7 +210,7 @@
             </plugin>
 
             <!-- Download WSDL from server -->
-            <plugin>
+            <!--<plugin>
                 <groupId>com.googlecode.maven-download-plugin</groupId>
                 <artifactId>maven-download-plugin</artifactId>
                 <version>1.0.0</version>
@@ -251,7 +252,7 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 </project>

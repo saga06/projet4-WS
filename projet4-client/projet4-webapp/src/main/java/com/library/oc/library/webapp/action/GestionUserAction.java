@@ -1,13 +1,7 @@
 package com.library.oc.library.webapp.action;
 
-import com.library.oc.library.business.contract.manager.Author;
-import com.library.oc.library.business.contract.manager.Book;
-import com.library.oc.library.business.contract.manager.Theme;
-import com.library.oc.library.business.contract.manager.User;
-import com.library.oc.library.business.contract.manager.BookBorrowed;
-import com.library.oc.library.business.contract.manager.Book_Service;
-import com.library.oc.library.business.contract.manager.UserService_Service;
-import com.library.oc.library.business.contract.manager.UserService;
+
+import com.library.oc.library.business.contract.manager.*;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.List;
@@ -35,11 +29,11 @@ public class GestionUserAction extends ActionSupport {
 
     private List<BookBorrowed> listBookBorrowedByUser;
 
-    private Book_Service bookService = new Book_Service();
-    private Book bookClient = bookService.getBookPort();
+    private BookService bookService = new BookService();
+    private BookClient bookClient = bookService.getBookPort();
 
-    private UserService_Service userService = new UserService_Service();
-    private UserService userClient = userService.getUserServicePort();
+    private UserService userService = new UserService();
+    private UserClient userClient = userService.getUserPort();
 
 
     // ==================== Getters/Setters ====================

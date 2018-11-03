@@ -1,22 +1,13 @@
 package com.library.oc.library.webapp.action;
 
-import com.library.oc.library.business.contract.manager.Book;
 
-import com.library.oc.library.business.contract.manager.Author;
-import com.library.oc.library.business.contract.manager.Book;
-import com.library.oc.library.business.contract.manager.Book_Service;
-import com.library.oc.library.business.contract.manager.NotFoundException_Exception;
-import com.library.oc.library.business.contract.manager.Theme;
-import com.library.oc.library.business.contract.manager.User;
-import com.library.oc.library.business.contract.manager.UserService;
-import com.library.oc.library.business.contract.manager.UserService_Service;
+import com.library.oc.library.business.contract.manager.*;
 import com.opensymphony.xwork2.ActionSupport;
 
 import java.util.List;
 
 
 public class GestionBookAction extends ActionSupport {
-
 
     // ==================== Attributs ====================
     // ----- Paramètres en entrée
@@ -34,11 +25,11 @@ public class GestionBookAction extends ActionSupport {
     private List<Theme> themes;
 
 
-    private Book_Service bookService = new Book_Service();
-    private Book bookClient = bookService.getBookPort();
+    private BookService bookService = new BookService();
+    private BookClient bookClient = bookService.getBookPort();
 
-    private UserService_Service userService = new UserService_Service();
-    private UserService userClient = userService.getUserServicePort();
+    private UserService userService = new UserService();
+    private UserClient userClient = userService.getUserPort();
 
     // ==================== Getters/Setters ====================
     public Integer getId() { return id; }
@@ -90,7 +81,7 @@ public class GestionBookAction extends ActionSupport {
         listBook = managerFactory.getBookManager().displayAllBooks();
 */
 
-        List<Book> listBook = bookClient.displayAllBooks();
+        listBook = bookClient.displayAllBooks();
 
         return ActionSupport.SUCCESS;
     }
@@ -131,8 +122,7 @@ public class GestionBookAction extends ActionSupport {
                     book = bookClient.getBook(id);
                     user = userClient.getUser(idUser);
                     bookClient.borrowBook(user,book);
-
-                } catch (NotFoundException_Exception e) {
+                } catch ( NotFoundException_Exception e) {
                     e.printStackTrace();
                 }
             }

@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Manager du package « book »
  */
-@WebService(name="BookService", serviceName="BookService")
+@WebService(name="BookClient", serviceName="BookService",portName = "BookPort")
 public interface BookManager {
 
     /**

@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class BookBorrowed {
 
-// ==================== Attributs ====================
+    // ==================== Attributs ====================
     private Integer idBorrow;
 
     private Date dateStart;
@@ -26,6 +26,11 @@ public class BookBorrowed {
     private Integer idBorrower;
 
     private Integer idBook;
+
+    private boolean returned;
+
+    private boolean returnedOnTime;
+
 
     private List<BookBorrowed> books = new ArrayList<BookBorrowed>();
 
@@ -104,9 +109,7 @@ public class BookBorrowed {
         this.dateEnd = dateEnd;
     }
 
-    public boolean isAlreadyExtended() {
-        return alreadyExtended;
-    }
+    public boolean isAlreadyExtended() { return alreadyExtended; }
     public void setAlreadyExtended(boolean alreadyExtended) {
         this.alreadyExtended = alreadyExtended;
     }
@@ -124,6 +127,13 @@ public class BookBorrowed {
     public void setIdBook(Integer idBook) {
         this.idBook = idBook;
     }
+
+    public boolean isReturned() { return returned; }
+    public void setReturned(boolean returned) { this.returned = returned; }
+
+
+    public boolean isReturnedOnTime() { return returnedOnTime; }
+    public void setReturnedOnTime(boolean returnedOnTime) { this.returnedOnTime = returnedOnTime; }
 
     public Integer getIdBorrow() { return idBorrow; }
     public void setIdBorrow(Integer idBorrow) {
@@ -187,6 +197,7 @@ public class BookBorrowed {
     public void setThemes(List<Theme> themes) {
         this.themes = themes;
     }
+
 
 
 }
