@@ -58,6 +58,7 @@
     <modules>
         <module>projet4-client</module>
         <module>projet4-provider</module>
+        <module>batch</module>
     </modules>
 
     <!-- ===================================== -->

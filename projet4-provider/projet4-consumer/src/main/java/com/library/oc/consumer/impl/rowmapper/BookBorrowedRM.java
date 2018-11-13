@@ -38,8 +38,8 @@ public class BookBorrowedRM implements RowMapper<BookBorrowed> {
         bookBorrowedRM.setAlreadyExtended(pRS.getBoolean("already_extended"));
         bookBorrowedRM.setIdBorrower(pRS.getInt("id_borrower"));
         bookBorrowedRM.setIdBook(pRS.getInt("id_book"));
-        bookBorrowedRM.setReturned(pRS.getBoolean("isReturned"));
-        bookBorrowedRM.setReturnedOnTime(pRS.getBoolean("isReturnedOnTime"));
+        bookBorrowedRM.setReturned(pRS.getBoolean("is_returned"));
+        bookBorrowedRM.setReturnedOnTime(pRS.getBoolean("is_returned_on_time"));
         bookBorrowedRM.setNumberOfCopies(pRS.getInt("number_of_copies"));
         bookBorrowedRM.setTitle(pRS.getString("title"));
         bookBorrowedRM.setEditorId(pRS.getInt("editor_id"));

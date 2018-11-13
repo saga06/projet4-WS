@@ -69,5 +69,10 @@ public class UserManagerImpl extends AbstractManager implements UserManager {
         return getDaoFactory().getUserDao().getNbUser();
     }
 
+    @Override
+    public List<User> getListUserLateReturn() {
+        return getDaoFactory().getUserDao().getListUserLateReturn();
+    }
+
 
 }

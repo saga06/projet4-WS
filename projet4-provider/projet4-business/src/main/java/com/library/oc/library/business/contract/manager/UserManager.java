@@ -37,6 +37,8 @@ public interface UserManager {
      */
     Integer getNbUser();
 
+    List<User> getListUserLateReturn();
+
     String hashPassword(@WebParam(name = "password") String password);
     User getEmailUser(@WebParam(name = "username") String username);
 
