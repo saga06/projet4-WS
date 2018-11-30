@@ -53,7 +53,6 @@ public class BookManagerImpl extends AbstractManager implements BookManager {
         bookBorrowed.setThemes(getDaoFactory().getThemeDao().findThemesByBook(bookBorrowed));
         bookBorrowed.setNbOfCopiesAlreadyBorrowed(getDaoFactory().getBookBorrowedDao().getNbOfCopiesAlreadyBorrowed(bookBorrowed));
         bookBorrowed.setNbOfCopiesAvailable(getNbOfCopiesAvailableForABookBorrowed(bookBorrowed));
-
     }
 
     @Override

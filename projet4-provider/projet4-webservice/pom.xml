@@ -72,6 +72,10 @@
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.library.oc</groupId>
+            <artifactId>projet4-business</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

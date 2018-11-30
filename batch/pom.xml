@@ -1,10 +1,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.batch.app</groupId>
-	<artifactId>scheduler</artifactId>
+	<!-- ===================================== -->
+	<!-- ======= Project's informations ====== -->
+	<!-- ===================================== -->
+	<parent>
+		<artifactId>projet4</artifactId>
+		<groupId>com.library.oc</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.library.oc</groupId>
+	<artifactId>batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -16,7 +25,7 @@
 		<!-- propriétés utilisées dans la dernière partie de cet article -->
 		<java.version>1.8</java.version>
 		<package.directory>${project.build.directory}/${name}</package.directory>
-		<main.class>com.batch.app.scheduler.App</main.class>
+		<main.class>com.library.oc.batch.App</main.class>
 
 		<!-- version de Spring batch -->
 		<spring-batch.version>3.0.0.RELEASE</spring-batch.version>
@@ -60,30 +69,6 @@
 	<build>
 		<plugins>
 			<!-- placer les plugins ici -->
-			<plugin>
-				<groupId>org.apache.cxf</groupId>
-				<artifactId>cxf-codegen-plugin</artifactId>
-				<version>3.2.1</version>
-				<executions>
-					<execution>
-						<id>generate-sources</id>
-						<phase>generate-sources</phase>
-						<configuration>
-							<sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
-							<wsdlOptions>
-								<wsdlOption>
-									<wsdl>${basedir}/src/main/resources/wsdl/gestionrelance.wsdl</wsdl>
-								</wsdlOption>
-							</wsdlOptions>
-						</configuration>
-						<goals>
-							<goal>wsdl2java</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-clean-plugin</artifactId>

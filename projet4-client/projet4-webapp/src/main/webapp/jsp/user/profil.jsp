@@ -17,22 +17,24 @@
     <table id="table" class="table table-dark">
         <thead class="thead-dark">
         <tr>
+<%--
             <th scope="col">id</th>
+--%>
             <th scope="col">Titre</th>
             <th scope="col">Auteur(s)</th>
             <th scope="col">Editeur</th>
             <th scope="col">Thème(s)</th>
             <th scope="col" style="text-align: center">Date début d'emprunt</th>
             <th scope="col" style="text-align: center">Date limite de retour</th>
-            <th scope="col" style="text-align: center">Prolonger</th>
+            <th scope="col" style="text-align: center">État du prêt</th>
         </tr>
         </thead>
         <tbody>
         <s:iterator value="listBookBorrowedByUser">
             <tr class="table-primary">
-                <td>
+                <%--<td>
                     <s:property value="idBorrow"/>
-                </td>
+                </td>--%>
                 <td>
                     <s:property value="title"/>
                 </td>
@@ -60,21 +62,32 @@
                     </s:iterator>
                 </td>
                 <td style="text-align: center">
-                    <s:date name="dateStart" format="dd/MM/yyyy" />
+                    <s:date name="dateStart.toGregorianCalendar.time" format="dd/MM/yyyy" />
                 </td>
                 <td style="text-align: center">
-                    <s:date name="dateEnd" format="dd/MM/yyyy" />
+                     <s:date name="dateEnd.toGregorianCalendar.time" format="dd/MM/yyyy" />
                 </td>
                 <td style="text-align: center">
-                    <%--TO DO : implémenter méthode prolongation--%>
-                    <s:if test="%{alreadyExtended==false}">
-                        <s:a cssClass="btn btn-warning" action="borrow_extend">
-                            <s:param name="id" value="idBorrow" />
-                            Prolonger
-                        </s:a>
+                    <s:if test="%{returned==false}">
+                        <s:if test="%{alreadyExtended==false}">
+                            En cours
+                            <s:a cssClass="btn btn-warning" action="borrow_extend">
+                                <s:param name="id" value="idBorrow" />
+                                Prolonger
+                            </s:a>
+                        </s:if>
+                        <s:else>
+                            <p>Emprunt déjà prolongé</p>
+                        </s:else>
                     </s:if>
                     <s:else>
-                        <p>Emprunt déjà prolongé</p>
+                        <p>Ouvrage rendu
+                        <s:if test="%{returnedOnTime==false}">
+                            (en retard)</p>
+                        </s:if>
+                        <s:else>
+                            (dans les temps)</p>
+                        </s:else>
                     </s:else>
                 </td>
             </tr>

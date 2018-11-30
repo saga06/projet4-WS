@@ -1,7 +1,7 @@
 package com.library.oc.library.model.bean.book;
 
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -95,19 +95,11 @@ public class BookBorrowed {
         this.id = id;
     }
 
-    public Date getDateStart() {
-        return dateStart;
-    }
-    public void setDateStart(Date dateStart) {
-        this.dateStart = dateStart;
-    }
+    public Date getDateStart() { return dateStart; }
+    public void setDateStart(Date dateStart) { this.dateStart = dateStart; }
 
-    public Date getDateEnd() {
-        return dateEnd;
-    }
-    public void setDateEnd(Date dateEnd) {
-        this.dateEnd = dateEnd;
-    }
+    public Date getDateEnd() { return dateEnd; }
+    public void setDateEnd(Date dateEnd) { this.dateEnd = dateEnd; }
 
     public boolean isAlreadyExtended() { return alreadyExtended; }
     public void setAlreadyExtended(boolean alreadyExtended) {
