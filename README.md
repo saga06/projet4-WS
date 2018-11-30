@@ -15,6 +15,7 @@ merci de télécharger la dernière version)
 3) Création de la bdd :
 - Sous PGadmin, créer une bdd nommée p4
 - utiliser le backup présent à la racine du projet pour restaurer la structure et les données
+ (il est aussi possible d'utiliser le bdd.sql présent, il n'y a qu'à lancer le script)
 
 4) Configuration interne à l'application : 
 
