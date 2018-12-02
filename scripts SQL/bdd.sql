@@ -422,6 +422,7 @@ COPY public.borrow (id_borrow, date_start, date_end, already_extended, id_borrow
 35	2018-09-04	2018-10-30	f	1	6	t	t
 38	2018-11-06	2019-01-01	t	1	2	f	f
 40	2018-11-30	2018-12-28	f	1	3	f	f
+41	2018-11-30	2019-01-25	t	1	4	f	f
 \.
 
 
@@ -474,9 +475,9 @@ COPY public.theme (id, name) FROM stdin;
 --
 
 COPY public.users (id, surname, lastname, email, password) FROM stdin;
-5	Samir	Gahama	samirgahama@hotmail.com	$2a$10$qMWyYgXF9Su3w9GwS7zoyOQYt9uFYr9/X07g/ssib201IQrmC3ip6
-1	Hubert	Jean	samirgahama@gmail.com	$2a$10$qMWyYgXF9Su3w9GwS7zoyOQYt9uFYr9/X07g/ssib201IQrmC3ip6
-3	fds	fds	test1@test.com	$2a$10$qMWyYgXF9Su3w9GwS7zoyOQYt9uFYr9/X07g/ssib201IQrmC3ip6
+1	Hubert	Jean	test@gmail.com	$2a$10$qMWyYgXF9Su3w9GwS7zoyOQYt9uFYr9/X07g/ssib201IQrmC3ip6
+5	Samir	Gahama	test@hotmail.com	$2a$10$qMWyYgXF9Su3w9GwS7zoyOQYt9uFYr9/X07g/ssib201IQrmC3ip6
+3	fds	fds	test@test.com	$2a$10$qMWyYgXF9Su3w9GwS7zoyOQYt9uFYr9/X07g/ssib201IQrmC3ip6
 \.
 
 
@@ -498,7 +499,7 @@ SELECT pg_catalog.setval('public.books_id_seq', 7, true);
 -- Name: borrow_borrow_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.borrow_borrow_id_seq', 40, true);
+SELECT pg_catalog.setval('public.borrow_borrow_id_seq', 41, true);
 
 
 --
