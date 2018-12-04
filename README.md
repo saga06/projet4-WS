@@ -1,6 +1,8 @@
 Projet Java EE de création d'un site web pour une bibliothèque.
 Ce projet a pour but de valider la formation openclassrooms expert JAVA EE 
 
+Ce projet a débuté avec, dans un premier, la réalisation de l'application avec apache Struts2 et Spring. Cette application a été développé sur un autre repo github : "library". Une fois l'application terminée, j'ai intégré la notion de SOA et la séparation des services et du client dans ce projet (d'où l'historique peu fourni, il faut donc prendre en compte l'historique du repo "library" pour avoir un historique complet) 
+
 1) Cloner le projet (git clone https://github.com/saga06/projet4-WS.git)
 
 2) Pré-requis : 
