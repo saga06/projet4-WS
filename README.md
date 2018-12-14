@@ -40,4 +40,8 @@ a) dans un premier temps, les services
 b) puis le client.
 c) il faut bien entendu au préalable faire un mvn package des services et un mvn clean install generate-sources du client)
 
+6) Un des identifiants de connexion pouvant être utilisé est : 
+id : test@test.com
+mdp : test
+
 
